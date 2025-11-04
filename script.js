@@ -62,7 +62,7 @@ const foundationFlashcards = [
     },
     {
         id: 13,
-        question: "The latent heat of vapourization for a material is 800 J/kg. How much energy is required to evaporate it?",
+        question: "The latent heat of vapourization for a material is 800 J/kg. How much energy is required to evaporate 1 Kg of it?",
         answer: "Energy required = mass × latent heat (E = m L). For 1 kg: E = 1 × 800 = 800 J. For mass m, E = 800 × m (J)."
     },
     {
