@@ -1,0 +1,345 @@
+/* Biology B1 Revision Flashcards - Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.tier-switch {
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Simple toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.4);
+    transition: .3s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.switch input:checked + .slider {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Foundation flashcard front variants to match pasted image */
+.flashcard.foundation.variant-beige .card-front {
+    background: linear-gradient(135deg, #fff4e6 0%, #f7e2cf 100%); /* pale peach/cream */
+    color: #111;
+    border: 2px solid rgba(0,0,0,0.08);
+}
+
+.flashcard.foundation.variant-blue .card-front {
+    background: linear-gradient(135deg, #dfefff 0%, #d0e6ff 100%); /* pale blue */
+    color: #05304a;
+    border: 2px solid rgba(0,0,0,0.06);
+}
+
+.flashcard.foundation.highlight .card-front {
+    background: linear-gradient(135deg, #ffcf8b 0%, #ff9f1c 100%); /* orange */
+    color: #111;
+    border: 2px solid rgba(0,0,0,0.12);
+}
+
+/* Ensure text contrast for highlighted and variant fronts */
+.flashcard.foundation .question-number,
+.flashcard.foundation .answer-label {
+    background: rgba(0,0,0,0.06);
+}
+
+.flashcard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Flashcard Styling */
+.flashcard {
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.flashcard.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+    color: #333;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.question-number, .answer-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.1);
+}
+
+.card-back .answer-label {
+    background: rgba(255,255,255,0.2);
+}
+
+.question-text, .answer-text {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+/* Image styling for flashcards (used for card id 12 graph) */
+.card-front-image {
+    max-width: 92%;
+    max-height: 45%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 8px auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.answer-text {
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+.click-hint {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Hover effects */
+.flashcard:hover .card-inner {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+.flashcard.flipped:hover .card-inner {
+    transform: rotateY(180deg) translateY(-5px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+
+footer p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+#reset-button {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#reset-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #ff5252 0%, #d63031 100%);
+}
+
+#reset-button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .flashcard-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .flashcard {
+        height: 220px;
+    }
+    
+    .question-text, .answer-text {
+        font-size: 1rem;
+    }
+    
+    .card-front, .card-back {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .flashcard {
+        height: 200px;
+    }
+    
+    .question-text, .answer-text {
+        font-size: 0.9rem;
+    }
+    
+    .card-front, .card-back {
+        padding: 12px;
+    }
+}
+
+/* Animation for when cards are created */
+.flashcard {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger the animation for multiple cards */
+.flashcard:nth-child(1) { animation-delay: 0.1s; }
+.flashcard:nth-child(2) { animation-delay: 0.2s; }
+.flashcard:nth-child(3) { animation-delay: 0.3s; }
+.flashcard:nth-child(4) { animation-delay: 0.4s; }
+.flashcard:nth-child(5) { animation-delay: 0.5s; }
+.flashcard:nth-child(6) { animation-delay: 0.6s; }
+.flashcard:nth-child(7) { animation-delay: 0.7s; }
+.flashcard:nth-child(8) { animation-delay: 0.8s; }
+.flashcard:nth-child(9) { animation-delay: 0.9s; }
+.flashcard:nth-child(10) { animation-delay: 1.0s; }
+.flashcard:nth-child(11) { animation-delay: 1.1s; }
+.flashcard:nth-child(12) { animation-delay: 1.2s; }
+.flashcard:nth-child(13) { animation-delay: 1.3s; }
+.flashcard:nth-child(14) { animation-delay: 1.4s; }
+.flashcard:nth-child(15) { animation-delay: 1.5s; }
+.flashcard:nth-child(16) { animation-delay: 1.6s; }
