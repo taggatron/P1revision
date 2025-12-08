@@ -23,7 +23,7 @@ const mockPaper2 = [
     { id: 1, question: "Which word describes the entire genetic material of an organism?", answer: "Genome — the complete set of genetic material in an organism." },
     { id: 2, question: "How many chromosomes are present in the cells produced via meiosis?", answer: "Half the number of the parent cell (haploid). For humans, meiosis produces cells with 23 chromosomes." },
     { id: 3, question: "Describe the difference between dominant and recessive alleles.", answer: "Dominant allele expresses phenotype when present; recessive allele only shows phenotype when two copies present (homozygous)." },
-    { id: 4, question: "A black fur rabbit with genotype Bb is crossed with a white fur rabbit (bb). Complete a genetic diagram for offspring.", answer: "Punnett square: B b across top and b b down side -> offspring: Bb, Bb, bb, bb -> 50% black (Bb), 50% white (bb)." },
+    { id: 4, question: "A black fur rabbit with genotype Bb is crossed with a white fur rabbit (bb). Complete a genetic diagram for offspring.", answer: "Punnett square: B b across top and b b down side -> offspring: Bb, Bb, bb, bb -> 50% black (Bb), 50% white (bb).", image: "punnett_bb_bb.svg" },
     { id: 5, question: "Define phenotype.", answer: "Phenotype is the observable characteristics of an organism resulting from genotype and environment." },
     { id: 6, question: "Describe the difference between natural selection (evolution) and selective breeding.", answer: "Natural selection: environmental pressures cause differential survival and reproduction, leading to evolution over time. Selective breeding: humans choose parents with desirable traits to breed, changing species traits artificially." },
     { id: 7, question: "Fully describe the process of evolution through natural selection.", answer: "Variation exists in a population; some variations give advantages; those individuals survive and reproduce more, passing on genes; over generations allele frequencies change leading to adaptation." },
@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="card-front">
                         <div class="question-number">Question ${card.id}</div>
                         <div class="question-text">${card.question}</div>
+                        ${card.image ? `<img src="${card.image}" alt="Punnett square diagram" class="card-front-image">` : ''}
                         <div class="click-hint">Click to reveal answer</div>
                     </div>
                     <div class="card-back">

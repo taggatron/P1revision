@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Punnett square for Bb × bb</title>
+  <desc id="desc">Punnett square showing a cross between a black-fur rabbit (Bb) and a white-fur rabbit (bb). Offspring genotypes: two Bb and two bb (50% black phenotype, 50% white phenotype).</desc>
+  <style>
+    .bg { fill: #fafafa; }
+    .grid { fill: none; stroke: #222; stroke-width: 2; }
+    .label { font: 18px/1.2 'Segoe UI', Arial, sans-serif; fill: #111; }
+    .small { font: 14px/1.2 'Segoe UI', Arial, sans-serif; fill: #111; }
+    .genotype { font: 28px/1.1 'Segoe UI', Arial, sans-serif; fill: #111; font-weight:700; }
+    .legend-box { rx:8; ry:8; fill: #ffffff; stroke:#ddd; }
+    .black-dot { fill: #111; stroke: #111; }
+    .white-dot { fill: #fff; stroke: #111; }
+    .percent { font: 16px/1.2 'Segoe UI', Arial, sans-serif; fill: #111; }
+  </style>
+
+  <rect width="100%" height="100%" class="bg" />
+
+  <!-- Title -->
+  <text x="24" y="34" class="label" font-size="20">Punnett square: Black (Bb) × White (bb)</text>
+  <text x="24" y="58" class="small">Parents: ♂ or ♀ labelled for clarity (order doesn't affect genotype ratios)</text>
+
+  <!-- Top parent label (moved up 10px) -->
+  <text x="240" y="90" class="label">Parent 1 (Black): Bb</text>
+  <!-- Left parent label rotated -->
+  <g transform="translate(160,160)">
+    <text x="-80" y="0" class="label" transform="rotate(-90)">Parent 2 (White): bb</text>
+  </g>
+
+  <!-- Grid position: top-left at 200,120 size 240x240 -->
+  <g transform="translate(200,120)">
+    <!-- Outer border -->
+    <rect x="0" y="0" width="240" height="240" class="grid" />
+    <!-- Vertical and horizontal center lines -->
+    <line x1="120" y1="0" x2="120" y2="240" class="grid" />
+    <line x1="0" y1="120" x2="240" y2="120" class="grid" />
+
+    <!-- Top header row (Parent1 gametes) -->
+    <text x="60" y="-12" class="small">B</text>
+    <text x="180" y="-12" class="small">b</text>
+
+    <!-- Left header column (Parent2 gametes) -->
+    <text x="-18" y="60" class="small">b</text>
+    <text x="-18" y="180" class="small">b</text>
+
+    <!-- Cells: top-left, top-right, bottom-left, bottom-right -->
+    <g>
+      <rect x="0" y="0" width="120" height="120" fill="#fff7f0" stroke-opacity="0" />
+      <text x="60" y="66" class="genotype" text-anchor="middle">Bb</text>
+    </g>
+
+    <g>
+      <rect x="120" y="0" width="120" height="120" fill="#fff7f0" stroke-opacity="0" />
+      <text x="180" y="66" class="genotype" text-anchor="middle">Bb</text>
+    </g>
+
+    <g>
+      <rect x="0" y="120" width="120" height="120" fill="#f0f7ff" stroke-opacity="0" />
+      <text x="60" y="186" class="genotype" text-anchor="middle">bb</text>
+    </g>
+
+    <g>
+      <rect x="120" y="120" width="120" height="120" fill="#f0f7ff" stroke-opacity="0" />
+      <text x="180" y="186" class="genotype" text-anchor="middle">bb</text>
+    </g>
+  </g>
+
+  <!-- Legend & percentages -->
+  <g transform="translate(460,120)">
+    <rect x="0" y="0" width="160" height="120" class="legend-box"/>
+    <text x="12" y="24" class="small" font-weight="700">Offspring summary</text>
+    <!-- Black phenotype (dominant) -->
+    <circle cx="24" cy="52" r="12" class="black-dot"/>
+    <text x="50" y="58" class="small">Bb — black phenotype</text>
+    <!-- White phenotype -->
+    <circle cx="24" cy="86" r="12" class="white-dot"/>
+    <text x="50" y="92" class="small">bb — white phenotype</text>
+    <!-- Percentages (wrapped into two lines to prevent overflow) -->
+    <text x="12" y="115" class="percent">
+      <tspan x="12" dy="0">Genotype ratio: 2 Bb : 2 bb</tspan>
+      <tspan x="12" dy="18">(50% : 50%)</tspan>
+    </text>
+  </g>
+
+  <!-- Footer explanation (split into two lines to stay within viewport) -->
+  <text x="24" y="322" class="small">
+    <tspan x="24" dy="0">Result: 2 out of 4 squares are Bb (dominant black), 2 are bb (recessive white) —</tspan>
+    <tspan x="24" dy="18">50% black, 50% white offspring expectation.</tspan>
+  </text>
+</svg>
