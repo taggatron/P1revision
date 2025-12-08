@@ -1,91 +1,50 @@
-// Foundation-tier flashcards (taken from provided image)
-const foundationFlashcards = [
-    {
-        id: 1,
-        question: "What is meant by the following energy stores: Kinetic, Thermal, chemical",
-        answer: "Kinetic: energy of motion. Thermal: internal energy related to temperature (particles' random motion). Chemical: energy stored in chemical bonds that can be released in reactions."
-    },
-    {
-        id: 2,
-        question: "Explain what is meant by the conservation of energy.",
-        answer: "Energy cannot be created or destroyed; it can only be transferred between stores or converted from one form to another. The total energy stays the same."
-    },
-    {
-        id: 3,
-        question: "Describe the change in energy stores that occur when a car comes to a stop while braking.",
-        answer: "The car's kinetic energy is mainly converted into thermal energy in the brakes (some is also dissipated as sound). The brakes and nearby air warm up."
-    },
-    {
-        id: 4,
-        question: "A metal cube has a mass of 12 kg and a volume of 3 m³. What is the density of the metal?",
-        answer: "Density = mass ÷ volume = 12 kg ÷ 3 m³ = 4 kg/m³."
-    },
-    {
-        id: 5,
-        question: "Describe how the density of the cube would change if it were heated. Use ideas about particles in your answer.",
-        answer: "Heating increases the kinetic energy of particles so they move further apart — the volume increases while mass stays the same, so density (mass/volume) decreases."
-    },
-    {
-        id: 6,
-        question: "Explain how you could find the density of a chess piece.",
-        answer: "Measure its mass with a balance. Find its volume by immersion: measure displaced water in a graduated cylinder. Then density = mass ÷ volume."
-    },
-    {
-        id: 7,
-        question: "Draw a particle model of a solid, liquid and gas. Explain how the energy and arrangement of particles change when heated.",
-        answer: "Solid: particles closely packed in fixed positions; low energy. Liquid: close but able to move/flow; more energy. Gas: far apart and move fast; highest energy. Heating increases particle kinetic energy, increases movement and average separation; can cause melting or boiling when enough energy is added."
-    },
-    {
-        id: 8,
-        question: "Why is a state change a physical change, and not a chemical change?",
-        answer: "A state change only alters the arrangement and energy of particles (e.g., solid → liquid) but does not change the chemical identity or the substances' particles — bonds are not rearranged chemically, so it's physical and often reversible."
-    },
-    {
-        id: 9,
-        question: "Define specific heat capacity.",
-        answer: "Specific heat capacity is the energy required to raise the temperature of 1 kg of a substance by 1 °C (or 1 K). Units: J/kg·K."
-    },
-    {
-        id: 10,
-        question: "It requires 1200 kJ of energy to heat 4 kg of copper by 40°C. What is the specific heat capacity of copper?",
-        answer: "Use c = E ÷ (m ΔT). Convert 1200 kJ = 1,200,000 J. c = 1,200,000 ÷ (4 × 40) = 1,200,000 ÷ 160 = 7,500 J/kg·K."
-    },
-    {
-        id: 11,
-        question: "Describe how you could investigate to find the specific heat capacity of a material.",
-        answer: "Measure mass of sample, heat with a heater of known power for a measured time (or measure energy input), record temperature change with a thermometer, and calculate c = E ÷ (m ΔT). Insulate sample, stir if liquid, and repeat for accuracy."
-    },
-    {
-        id: 12,
-        question: "Describe what is happening during the various stages of the graph below",
-        answer: "Typically: (1) temperature of solid increases as it is heated; (2) plateau at melting point where temperature stays constant while energy causes change of state (melting); (3) temperature of liquid increases; (4) plateau at boiling point where energy causes vaporisation; (5) temperature of gas increases."
-    },
-    {
-        id: 13,
-        question: "The latent heat of vapourization for a material is 800 J/kg. How much energy is required to evaporate 1 Kg of it?",
-        answer: "Energy required = mass × latent heat (E = m L). For 1 kg: E = 1 × 800 = 800 J. For mass m, E = 800 × m (J)."
-    },
-    {
-        id: 14,
-        question: "Explain why an aerosol canister can not be heated.",
-        answer: "Heating increases the pressure of the gas inside and may cause the can to rupture or explode. Also flammable propellants can ignite — it's dangerous."
-    },
-    {
-        id: 15,
-        question: "Explain how energy is transferred through conduction.",
-        answer: "Conduction is transfer of energy through direct contact: vibrating particles pass kinetic energy to neighbouring particles, and in metals free electrons carry energy quickly through the material."
-    },
-    {
-        id: 16,
-        question: "Explain how energy is transferred through convection.",
-        answer: "Convection occurs in fluids (liquids/gases) when warmer, less dense regions rise and cooler, denser regions sink, creating convection currents that transfer energy."
-    }
+// Mock Paper 1 (Year 10) flashcards — content taken from the provided first image preview
+const mockPaper1 = [
+    { id: 1, question: "Explain the difference between a physical change and a chemical change.", answer: "Physical change alters state or appearance without changing the substance; chemical change produces new substances with different properties." },
+    { id: 2, question: "State the mass and charge of: Protons, Neutrons, Electrons.", answer: "Proton: mass ~1, charge +1. Neutron: mass ~1, charge 0. Electron: mass ~~0, charge -1 (relative units)." },
+    { id: 3, question: "Draw out a fully labelled Bohr model of an atom of carbon.", answer: "Carbon has 6 protons and typically 6 neutrons in nucleus; 6 electrons with 2 in first shell, 4 in second shell." },
+    { id: 4, question: "Complete the balanced symbol equation: N2 + ..... O2 ..... NO2", answer: "Balanced: N2 + 2 O2 -> 2 NO2 (if forming NO2 with 1 N per molecule) — check oxidation states for context." },
+    { id: 5, question: "What is the relative formula mass for Potassium hydroxide, KOH?", answer: "Mr = K(39) + O(16) + H(1) = 56 (approximately)." },
+    { id: 6, question: "Explain why magnesium is in group 2 and period 3 of the periodic table.", answer: "Group 2 means it has 2 electrons in outer shell; period 3 means it has 3 electron shells (energy levels)." },
+    { id: 7, question: "Aluminium forms an Al3+ ion and chlorine forms a Cl- ion. Explain why it has the formula AlCl3.", answer: "Al3+ needs three Cl- to balance charge: Al3+ + 3Cl- -> AlCl3; total charge neutral." },
+    { id: 8, question: "Chlorine atoms react together to form covalent bonds. Explain formation of this bond.", answer: "Two chlorine atoms each share one electron to achieve a full outer shell, forming a Cl-Cl single covalent bond." },
+    { id: 9, question: "Complete the diagram to show the bonding in Cl2 (two overlapping circles).", answer: "Each Cl contributes one electron to the shared pair in the overlap — shows covalent bond with shared electron pair." },
+    { id: 10, question: "Diamond, graphite and fullerenes are all allotropes of carbon. What is meant by this?", answer: "Allotropes are different structural forms of the same element with different properties due to different bonding arrangements." },
+    { id: 11, question: "Fullerenes and graphite can be used as lubricants. Explain why.", answer: "Graphite layers slide over each other because of weak forces between layers; fullerenes have spherical shapes that can roll, providing lubrication." },
+    { id: 12, question: "Sodium hydroxide and hydrochloric acid react together to make sodium chloride. Explain: why this is a neutralisation reaction; indicator used; crystallisation to separate salt.", answer: "Neutralisation: acid + base -> salt + water. Use universal indicator to show pH ~7. Crystallisation can separate soluble salt by evaporating water to leave crystals." },
+    { id: 13, question: "Which ions make solutions alkali?", answer: "Solutions are alkali when they contain OH- (hydroxide) ions in excess." },
+    { id: 14, question: "Do metals or non-metals form at the cathode?", answer: "Reduction occurs at the cathode; metal ions are often reduced to form metals at the cathode." },
+    { id: 15, question: "Define activation energy.", answer: "Activation energy is the minimum energy required for reactant particles to react when they collide." },
+    { id: 16, question: "Describe the test for oxygen gas.", answer: "A glowing splint relights (glows brighter or reignites) in oxygen — simple positive test." }
+];
+
+// Mock Paper 2 (Year 11) flashcards — content taken from second image preview (biology + physics + physics radioactivity)
+const mockPaper2 = [
+    { id: 1, question: "Which word describes the entire genetic material of an organism?", answer: "Genome — the complete set of genetic material in an organism." },
+    { id: 2, question: "How many chromosomes are present in the cells produced via meiosis?", answer: "Half the number of the parent cell (haploid). For humans, meiosis produces cells with 23 chromosomes." },
+    { id: 3, question: "Describe the difference between dominant and recessive alleles.", answer: "Dominant allele expresses phenotype when present; recessive allele only shows phenotype when two copies present (homozygous)." },
+    { id: 4, question: "A black fur rabbit with genotype Bb is crossed with a white fur rabbit (bb). Complete a genetic diagram for offspring.", answer: "Punnett square: B b across top and b b down side -> offspring: Bb, Bb, bb, bb -> 50% black (Bb), 50% white (bb)." },
+    { id: 5, question: "Define phenotype.", answer: "Phenotype is the observable characteristics of an organism resulting from genotype and environment." },
+    { id: 6, question: "Describe the difference between natural selection (evolution) and selective breeding.", answer: "Natural selection: environmental pressures cause differential survival and reproduction, leading to evolution over time. Selective breeding: humans choose parents with desirable traits to breed, changing species traits artificially." },
+    { id: 7, question: "Fully describe the process of evolution through natural selection.", answer: "Variation exists in a population; some variations give advantages; those individuals survive and reproduce more, passing on genes; over generations allele frequencies change leading to adaptation." },
+    { id: 8, question: "State a concern with genetic screening.", answer: "Ethical/privacy issues, potential discrimination, psychological impact, and decisions about embryos or pregnancy termination." },
+    { id: 9, question: "Describe how selective breeding could be used to breed a pug from a wolf.", answer: "Selective breeding over many generations: choose individuals with desired traits (smaller size, flattened face, docility) and breed them until traits become common — involves many generations and careful selection." },
+    { id: 10, question: "Suggest why some people object to selectively breeding dogs.", answer: "Welfare concerns (health problems), loss of genetic diversity, ethical objections to manipulating animals for aesthetics." },
+    { id: 11, question: "Define irradiation.", answer: "Irradiation is exposing food or materials to ionising radiation (e.g., gamma rays) to kill microbes or pests." },
+    { id: 12, question: "Define contamination.", answer: "Contamination is when unwanted radioactive material is deposited on or in an object or person; it can spread and cause exposure until removed." },
+    { id: 13, question: "Describe what type of radioactive decay is happening: 14/6 C -> 14/7 N + 0/-1 e", answer: "This is beta minus (β-) decay: a neutron converts to a proton and emits an electron (beta particle)." },
+    { id: 14, question: "A student is trying to find out what type of radiation is being emitted from element X. Describe an investigation they could carry out.", answer: "Use detectors: Geiger-Müller tube counts β and γ; place paper to stop α, thin metal to reduce β, and dense lead to reduce γ; compare readings and shielding to identify radiation type." },
+    { id: 15, question: "How many protons, neutrons and electrons does lithium have? (Li shown with atomic number 3, mass number 7)", answer: "Protons = 3 (atomic number). Electrons = 3 (neutral atom). Neutrons = mass − protons = 7 − 3 = 4." },
+    { id: 16, question: "Use the graph below to find the element half life. (counts vs time)", answer: "Half-life is time taken for activity to fall to half its initial value: read initial count then find time where count ≈ half; e.g., if initial ~80,000 then half ~40,000 — read corresponding time from x-axis." }
 ];
 
 // Initialize the flashcard app (foundation-only)
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('flashcard-container');
     const resetButton = document.getElementById('reset-button');
+    const toggle = document.getElementById('paper-toggle');
+    const label1 = document.getElementById('paper-label-1');
+    const label2 = document.getElementById('paper-label-2');
 
     // Create flashcards from a given array
     function createFlashcards(cardsArray) {
@@ -100,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="question-number">Question ${card.id}</div>
-                        ${card.id === 12 ? '<img src="latentheatgraph.png" alt="Graph showing temperature vs time" class="card-front-image">' : ''}
                         <div class="question-text">${card.question}</div>
                         <div class="click-hint">Click to reveal answer</div>
                     </div>
@@ -129,8 +87,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Render foundation flashcards only
-    createFlashcards(foundationFlashcards);
+    // Update label styles based on toggle
+    function updateLabels() {
+        if (toggle.checked) {
+            label1.style.opacity = '0.7';
+            label2.style.opacity = '1';
+        } else {
+            label1.style.opacity = '1';
+            label2.style.opacity = '0.7';
+        }
+    }
+
+    // Render current selection
+    function renderCurrent() {
+        if (toggle.checked) {
+            createFlashcards(mockPaper2);
+        } else {
+            createFlashcards(mockPaper1);
+        }
+    }
+
+    // Initial render
+    updateLabels();
+    renderCurrent();
+
+    // Toggle behavior
+    toggle.addEventListener('change', function() {
+        updateLabels();
+        renderCurrent();
+    });
 
     // Reset button functionality
     resetButton.addEventListener('click', resetAllCards);
