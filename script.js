@@ -60,12 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="card-front">
                         <div class="question-number">Question ${card.id}</div>
                         <div class="question-text">${card.question}</div>
-                        ${card.image ? `<img src="${card.image}" alt="Punnett square diagram" class="card-front-image">` : ''}
                         <div class="click-hint">Click to reveal answer</div>
                     </div>
                     <div class="card-back">
                         <div class="answer-label">Answer ${card.id}</div>
-                        <div class="answer-text">${card.answer}</div>
+                        ${card.image ? `<img src="${card.image}" alt="Answer diagram" class="card-back-image">` : `<div class="answer-text">${card.answer}</div>`}
                         <div class="click-hint">Click to show question</div>
                     </div>
                 </div>

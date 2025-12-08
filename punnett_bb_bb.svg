@@ -67,23 +67,31 @@
 
   <!-- Legend & percentages -->
   <g transform="translate(460,120)">
-    <rect x="0" y="0" width="160" height="120" class="legend-box"/>
+    <!-- increased height to allow two-line keys + genotype lines -->
+    <rect x="0" y="0" width="160" height="140" class="legend-box"/>
     <text x="12" y="24" class="small" font-weight="700">Offspring summary</text>
-    <!-- Black phenotype (dominant) -->
-    <circle cx="24" cy="52" r="12" class="black-dot"/>
-    <text x="50" y="58" class="small">Bb — black phenotype</text>
-    <!-- White phenotype -->
-    <circle cx="24" cy="86" r="12" class="white-dot"/>
-    <text x="50" y="92" class="small">bb — white phenotype</text>
-    <!-- Percentages (wrapped into two lines to prevent overflow) -->
-    <text x="12" y="115" class="percent">
-      <tspan x="12" dy="0">Genotype ratio: 2 Bb : 2 bb</tspan>
+    <!-- Black phenotype (dominant) — two-line label, right-aligned -->
+    <circle cx="24" cy="44" r="12" class="black-dot"/>
+    <text x="150" y="48" class="small" text-anchor="end">
+      <tspan x="150" dy="0">Bb</tspan>
+      <tspan x="150" dy="18">black phenotype</tspan>
+    </text>
+    <!-- White phenotype — two-line label, right-aligned -->
+    <circle cx="24" cy="84" r="12" class="white-dot"/>
+    <text x="150" y="88" class="small" text-anchor="end">
+      <tspan x="150" dy="0">bb</tspan>
+      <tspan x="150" dy="18">white phenotype</tspan>
+    </text>
+    <!-- Percentages (split into separate lines) and moved down by ~15px -->
+    <text x="12" y="155" class="percent">
+      <tspan x="12" dy="0">Genotype ratio:</tspan>
+      <tspan x="12" dy="18">2 Bb : 2 bb</tspan>
       <tspan x="12" dy="18">(50% : 50%)</tspan>
     </text>
   </g>
 
   <!-- Footer explanation (split into two lines to stay within viewport) -->
-  <text x="24" y="322" class="small">
+  <text x="24" y="340" class="small">
     <tspan x="24" dy="0">Result: 2 out of 4 squares are Bb (dominant black), 2 are bb (recessive white) —</tspan>
     <tspan x="24" dy="18">50% black, 50% white offspring expectation.</tspan>
   </text>
